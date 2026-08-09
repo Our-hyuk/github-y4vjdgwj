@@ -298,3 +298,115 @@ h1{ font-size:22px; margin:6px 0 4px; }
 }
 .measure-bar{ position:absolute; top:0; bottom:0; width:1px; background:var(--border); }
 .measure-bar.final{ width:3px; background:var(--brass); }
+
+
+/* ===== Fretboard (CAGED) ===== */
+.fretboard-wrap {
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.fret-numbers {
+  display: flex;
+  margin-bottom: 4px;
+  padding-left: 28px;
+}
+.fret-num-spacer { width: 28px; flex-shrink: 0; }
+.fret-num {
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.fretboard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.string-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(58, 47, 34, 0.6);
+}
+.string-row:last-child { border-bottom: none; }
+
+.string-name {
+  width: 28px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.string-track {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex: 1;
+}
+
+.fret-cell {
+  flex-shrink: 0;
+  height: 100%;
+  border-right: 1px solid var(--border);
+}
+.fret-cell.nut {
+  border-right: 3px solid var(--brass);
+}
+
+.fb-note {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--surface);
+  border: 2px solid currentColor;
+  z-index: 2;
+  cursor: default;
+}
+.fb-note.root {
+  box-shadow: 0 0 0 2px var(--brass);
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.caged-selector {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.caged-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.caged-btn.active {
+  border-color: var(--brass);
+  color: var(--text);
+  background: rgba(201, 169, 106, 0.15);
+}

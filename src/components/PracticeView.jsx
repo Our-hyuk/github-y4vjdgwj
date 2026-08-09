@@ -1,3 +1,4 @@
+import Fretboard from './Fretboard';
 import { useState } from 'react';
 import { DEGREE_LABELS } from '../data/colorModes';
 import { generateLeftHandRoutine } from '../utils/generateRoutine';
@@ -202,7 +203,13 @@ export default function PracticeView({ context }) {
             </div>
 
             <TabDisplay sequence={routine.sequence} colorMode={colorMode} />
-
+            <Fretboard
+               keyName={routine.key}
+               scaleName={routine.scaleName}
+               colorMode={colorMode}
+               activeShape={null}
+               showDegrees={true}
+            />
             <p className="flow-note">
               포지션: {routine.boxStart}~{routine.boxEnd}프렛 · {routine.shapeLabel} · {routine.tempoHint}
             </p>
